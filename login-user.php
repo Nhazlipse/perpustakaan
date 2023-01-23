@@ -1,8 +1,11 @@
-<?php include 'header.php'; ?>
-<?php include 'operasi-login.php'; ?>
+<?php
+include 'header.php';
+include 'validasi-login.php'
+?>
+
 
 <!-- awal Row -->
-<form method="post" action="">
+<form method="post" action="validasi-login.php">
     <label for="username">Username:</label>
     <input type="text" id="pengguna" name="pengguna">
     <br>
