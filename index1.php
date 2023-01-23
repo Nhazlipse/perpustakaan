@@ -1,6 +1,13 @@
-<?php include 'header.php'; ?>
-<?php include 'operasi-index2.php'; ?>
+<?php include "header.php"; ?>
+<?php include "operasi-index.php"; ?>
 
+
+<!-- awal Head -->
+<div class="head text-center">
+    <img src="assets/img/uniska.png" alt="logo-uniska" width="150" height="150">
+    <h2 class="text-white"><b>Aplikasi Buku Tamu <br> Pemograman WEB</b></h2>
+</div>
+<!-- end Head -->
 
 <!-- awal Row -->
 <div class="container1">
@@ -26,13 +33,10 @@
                             <input type="text" class="form-control form-control-user" name="alamat" placeholder="Alamat" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user" name="nope" placeholder="No Hp." required>
+                            <input type="number" class="form-control form-control-user" name="nope" placeholder="No Hp." required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user" name="pengguna" placeholder="Username" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control form-control-user" name="passwd" placeholder="Password" required>
+                            <input type="text" class="form-control form-control-user" name="komentar" placeholder="Komentar" required>
                         </div>
 
                         <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">Simpan Data</button>
@@ -61,7 +65,4 @@
 </div>
 <!-- end Row -->
 
-
-
-
-<?php include 'footer.php'; ?>
+<?php include "footer.php"; ?>
