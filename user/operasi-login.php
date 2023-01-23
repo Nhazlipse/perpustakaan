@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
         // Login successful, redirect to protected page
         session_start();
         $_SESSION['pengguna'] = $pengguna;
+        $_SESSION['pp'] = $pp;
         header("Location: dashboard.php");
     } else {
         // Login failed, display an error message

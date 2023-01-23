@@ -1,5 +1,7 @@
 <?php
 include 'header.php';
+include 'koneksi.php';
+
 session_start();
 if (!isset($_SESSION['pengguna'])) {
     header('location:login-user.php');
@@ -20,6 +22,13 @@ if (!isset($_SESSION['pengguna'])) {
 <body>
     <h1>Dashboard</h1>
     <h2>Selamat Datang <?php echo $_SESSION['nama']; ?></h2>
+
+    <div class="d-flex justify-content-center align-items-center vh-100">
+    	<div class="shadow w-350 p-3 text-center">
+    		<img src="upload/<?=$_SESSION['pp']?>" class="img-fluid rounded-circle">
+            <h3 class="display-4 "><?=$_SESSION['pengguna']?></h3>
+		</div>
+    </div>
     <a href="logout.php">Logout</a>
 
     <form action="operasi-upload-img.php" method="post" enctype="multipart/form-data">

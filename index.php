@@ -35,6 +35,10 @@
                             <input type="password" class="form-control form-control-user" name="passwd" placeholder="Password" required>
                         </div>
 
+                        <div class="mb-3"><label class="form-label">Profile Picture</label>
+		                    <input type="file" class="form-control" name="pp">
+		                </div>
+
                         <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">Simpan Data</button>
                     </form>
 
