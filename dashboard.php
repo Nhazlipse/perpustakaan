@@ -21,6 +21,11 @@ if (!isset($_SESSION['pengguna'])) {
     <h1>Dashboard</h1>
     <h2>Selamat Datang <?php echo $_SESSION['nama']; ?></h2>
     <a href="logout.php">Logout</a>
+
+    <form action="operasi-upload-img.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="profile_image" />
+    <input type="submit" value="Upload Image" />
+</form>
 </body>
 
 </html>
