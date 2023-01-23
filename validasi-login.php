@@ -13,7 +13,12 @@ if (isset($_POST['submit'])) {
         session_start();
         $_SESSION['pengguna'] = $data['pengguna'];
         $_SESSION['nama'] = $data['nama'];
-        header("location:dashboard.php");
+        $status = $data['status'];
+        if ($status == 'aktif') {
+            header("location:dashboard.php");
+        } else {
+            echo "<script>alert('Akun Anda Belum Aktif!');window.location='login-user.php';</script>";
+        }
     } else {
         echo "<script>alert('Username atau Password Salah!');window.location='login-user.php';</script>";
     }
