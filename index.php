@@ -33,7 +33,7 @@
                             <input type="text" class="form-control form-control-user" name="alamat" placeholder="Alamat" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user" name="nope" placeholder="No Hp." required>
+                            <input type="number" class="form-control form-control-user" name="nope" placeholder="No Hp." required>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control form-control-user" name="komentar" placeholder="Komentar" required>
