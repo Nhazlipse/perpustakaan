@@ -44,7 +44,7 @@ include 'header.php';
                     </form>
 
                     <!-- Form Lihat List Pengunjung (bukan admin) -->
-                    <form class="user" action="listpengunjung.php">
+                    <form class="user" action="user/listpengunjung.php">
                         <br>
                         <button type="submit" name="lihat" class="btn btn-danger btn-user btn-block">Histori Pengunjung</button>
                     </form>

@@ -29,16 +29,11 @@ if (!isset($_SESSION['pengguna'])) {
 
     <div class="d-flex justify-content-center align-items-center vh-100">
         <div class="shadow w-350 p-3 text-center">
-            <img src="upload/<?= $_SESSION['pp'] ?>" class="img-fluid rounded-circle">
+            <img src="<?= $_SESSION['pp'] ?>" class="img-fluid rounded-circle">
             <h3 class="display-4 "><?= $_SESSION['pengguna'] ?></h3>
         </div>
     </div>
     <a href="user/logout-user.php">Logout</a>
-
-    <form action="operasi-upload-img.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="profile_image" />
-        <input type="submit" value="Upload Image" />
-    </form>
 </body>
 
 </html>

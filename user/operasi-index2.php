@@ -7,12 +7,11 @@ if (isset($_POST['simpan'])) {
     date_default_timezone_set('Asia/Jakarta');
     $tgl = date('Y-m-d');
 
-    $new_img_name = "";
 
     // check if the image has been uploaded
-    if (isset($_FILES['pp']['name']) && !empty($_FILES['pp']['name'])) {
+    if (isset($_FILES['pp']['nama']) && !empty($_FILES['pp']['nama'])) {
 
-        $img_name = $_FILES['pp']['name'];
+        $img_name = $_FILES['pp']['nama'];
         $tmp_name = $_FILES['pp']['tmp_name'];
         $error = $_FILES['pp']['error'];
 
@@ -24,7 +23,7 @@ if (isset($_POST['simpan'])) {
             $allowed_exs = array('jpg', 'jpeg', 'png');
             if (in_array($img_ex_to_lc, $allowed_exs)) {
                 $new_img_name = uniqid() . '.' . $img_ex_to_lc;
-                $img_upload_path = '../upload/' . $new_img_name;
+                $img_upload_path = '..upload/' . $new_img_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
             } else {
                 echo "<script>alert('File type not allowed.');document.location='?';</script>";
@@ -44,7 +43,7 @@ if (isset($_POST['simpan'])) {
         // prepare the SQL statement
         $stmt = $koneksi->prepare("INSERT INTO ttamu (tanggal, nama, email, alamat, nope, pengguna, password, pp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         // bind the parameters
-        $stmt->bind_param("ssssssss", $tgl, $_POST['nama'], $_POST['email'], $_POST['alamat'], $_POST['nope'], $_POST['pengguna'], $_POST['passwd'], $new_img_name);
+        $stmt->bind_param("ssssssss", $tgl, $_POST['nama'], $_POST['email'], $_POST['alamat'], $_POST['nope'], $_POST['pengguna'], $_POST['passwd'], $_POST['pp']);
         // execute the SQL statement
         $stmt->execute();
         //Create A Session

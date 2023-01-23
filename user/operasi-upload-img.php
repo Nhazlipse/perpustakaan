@@ -1,4 +1,7 @@
 <?php
+
+include 'koneksi.php'
+
 // Ambil file yang diupload
 $profile_image = $_FILES['profile_image'];
 
