@@ -18,4 +18,10 @@
 <body class="bg-gradient-info">
 
     <div class="container">
-        <?php include "koneksi.php"; ?>
+        <?php
+        require_once 'database\koneksi.php';
+
+        use database\koneksi;
+
+        $koneksi = new koneksi();
+        ?>

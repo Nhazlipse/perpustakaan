@@ -1,10 +1,14 @@
 <?php
+
+use database\koneksi;
+
 include 'header.php';
-include 'koneksi.php';
+
+$koneksi = new koneksi();
 
 session_start();
 if (!isset($_SESSION['pengguna'])) {
-    header('location:login-user.php');
+    header('location:user/login-user.php');
     exit;
 }
 ?>
@@ -24,17 +28,17 @@ if (!isset($_SESSION['pengguna'])) {
     <h2>Selamat Datang <?php echo $_SESSION['nama']; ?></h2>
 
     <div class="d-flex justify-content-center align-items-center vh-100">
-    	<div class="shadow w-350 p-3 text-center">
-    		<img src="upload/<?=$_SESSION['pp']?>" class="img-fluid rounded-circle">
-            <h3 class="display-4 "><?=$_SESSION['pengguna']?></h3>
-		</div>
+        <div class="shadow w-350 p-3 text-center">
+            <img src="upload/<?= $_SESSION['pp'] ?>" class="img-fluid rounded-circle">
+            <h3 class="display-4 "><?= $_SESSION['pengguna'] ?></h3>
+        </div>
     </div>
-    <a href="logout.php">Logout</a>
+    <a href="user/logout-user.php">Logout</a>
 
     <form action="operasi-upload-img.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="profile_image" />
-    <input type="submit" value="Upload Image" />
-</form>
+        <input type="file" name="profile_image" />
+        <input type="submit" value="Upload Image" />
+    </form>
 </body>
 
 </html>

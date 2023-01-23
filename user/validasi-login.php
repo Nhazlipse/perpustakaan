@@ -1,25 +1,22 @@
 <?php
-include 'koneksi.php';
 
-if (isset($_POST['submit'])) {
-    $pengguna = $_POST['pengguna'];
-    $password = $_POST['password'];
+require_once '../database/koneksi.php';
 
-    $sql = "SELECT * FROM ttamu WHERE pengguna = '$pengguna' AND password = '$password'";
-    $query = mysqli_query($koneksi, $sql);
-    $data = mysqli_fetch_array($query);
+use database\koneksi;
 
-    if ($data['pengguna'] == $pengguna && $data['password'] == $password) {
-        session_start();
-        $_SESSION['pengguna'] = $data['pengguna'];
-        $_SESSION['nama'] = $data['nama'];
-        $status = $data['status'];
-        if ($status == 'aktif') {
-            header("location:dashboard.php");
-        } else {
-            echo "<script>alert('Akun Anda Belum Aktif!');window.location='login-user.php';</script>";
-        }
-    } else {
-        echo "<script>alert('Username atau Password Salah!');window.location='login-user.php';</script>";
-    }
+$koneksi = new koneksi();
+
+$stmt = $koneksi->prepare("SELECT * FROM ttamu WHERE pengguna = ? AND password = ?");
+$stmt->bind_param("ss", $_POST['pengguna'], $_POST['password']);
+$stmt->execute();
+
+$result = $stmt->get_result();
+if ($result->num_rows === 0) {
+    echo "<script>alert('Username atau password salah.');document.location='?';</script>";
+} else {
+    $row = $result->fetch_assoc();
+    session_start();
+    $_SESSION['pengguna'] = $row['pengguna'];
+    $_SESSION['nama'] = $row['nama'];
+    header("location: ../dashboard.php");
 }

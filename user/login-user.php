@@ -1,6 +1,5 @@
 <?php
-include 'header.php';
-include 'validasi-login.php'
+include_once '../header.php';
 ?>
 
 
@@ -18,4 +17,4 @@ include 'validasi-login.php'
 
 
 
-<?php include 'footer.php'; ?>
+<?php include '../footer.php'; ?>
