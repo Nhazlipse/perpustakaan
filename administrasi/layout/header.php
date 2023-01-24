@@ -18,7 +18,7 @@
 <body class="bg-gradient-info">
 
     <div class="container">
-        <?php
+    <?php
         require_once '..\database\koneksi.php';
 
         use database\koneksi;

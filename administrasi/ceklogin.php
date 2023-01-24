@@ -1,13 +1,15 @@
 <?php
 //panggil koneksi
-include "koneksi.php";
+require_once '../database/koneksi.php';
 
 
 //deklarasikan user dan pass
 $password = md5($_POST['password']);
 $username = $_POST['username'];
 
-$login = mysqli_query($koneksi, "SELECT * FROM tuser WHERE username='$username' and  password = '$password' and status = 'Aktif' ");
+
+$query = "SELECT * FROM tuser WHERE username='$username' and  password = '$password' and status = 'Aktif' ";
+$login = $koneksi->query($query);
 $data = mysqli_fetch_array($login);
 
 
