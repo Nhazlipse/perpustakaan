@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "layout\header.php";
 ?>
 
 <!-- row awal -->
@@ -61,4 +61,4 @@ include "header.php";
 
             </div>
         </div>
-        <?php include "footer.php"; ?>
+        <?php include "layout\footer.php"; ?>

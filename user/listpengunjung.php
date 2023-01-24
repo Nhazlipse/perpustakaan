@@ -1,5 +1,5 @@
 <?php
-include "../header.php"; ?>
+include_once "layout/header.php"; ?>
 <?php
 
 ?>
@@ -54,4 +54,4 @@ include "../header.php"; ?>
     </div>
     <!-- akhir container -->
 
-    <?php include "../footer.php"; ?>
+    <?php include "layout/footer.php"; ?>

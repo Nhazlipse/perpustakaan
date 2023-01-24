@@ -1,5 +1,5 @@
 <?php
-include_once '../header.php';
+include_once 'layout\header.php';
 ?>
 
 
@@ -17,4 +17,4 @@ include_once '../header.php';
 
 
 
-<?php include '../footer.php'; ?>
+<?php include 'layout\footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
 
-include 'koneksi.php'
+include 'koneksi.php';
 
 // Ambil file yang diupload
 $profile_image = $_FILES['profile_image'];
@@ -14,4 +14,3 @@ move_uploaded_file($profile_image["tmp_name"], $target_file);
 
 // Tampilkan pesan sukses
 echo "Gambar profil Anda berhasil diupload!";
-?>

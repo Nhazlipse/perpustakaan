@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php include "header.php" ?>
+<?php include "layout\header.php" ?>
 
 <head>
     <title>Login Admin | Pemograman WEB</title>
@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-lg-6 d-lg-block bg-primary shadow-lg p-5 text-center">
                                 <h3 class="text-white"><b>Buku Tamu <br> Pemograman Web</b></h3>
-                                <img src="assets/img/uniska.png" alt="">
+                                <img src="../assets/img/uniska.png" alt="">
                             </div>
 
                             <div class="col-lg-6">
