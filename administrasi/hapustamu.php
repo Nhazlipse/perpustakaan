@@ -1,13 +1,12 @@
 <!-- session agar (bukan admin) tidak dapat mengakses file admin -->
 <?php
-
 require_once '../database/koneksi.php';
 
 use database\koneksi;
 
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("location:login.php");
+    header("location:admin-login.php");
 }
 
 // hapus data pengungjung

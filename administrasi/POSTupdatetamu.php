@@ -1,6 +1,9 @@
 <!-- operasi untuk edit data form -->
 <?php
-
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("location:admin-login.php");
+}
 require_once '../database/koneksi.php';
 
 use database\koneksi;
