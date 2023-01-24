@@ -37,10 +37,10 @@ include 'header.php';
                         </div>
 
                         <div class="mb-3"><label class="form-label">Profile Picture</label>
-                            <input type="file" class="form-control" name="pp">
+                            <input type="file" class="form-control" name="file" id="file">
                         </div>
 
-                        <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">Simpan Data</button>
+                        <button type="submit" name="simpan" value="Upload" class="btn btn-primary btn-user btn-block">Simpan Data</button>
                     </form>
 
                     <!-- Form Lihat List Pengunjung (bukan admin) -->

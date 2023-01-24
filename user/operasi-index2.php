@@ -2,38 +2,57 @@
 
 use database\koneksi;
 
+// Mengeset folder tujuan upload
+$target_dir = "upload/";
+$target_file = $target_dir . basename($_FILES["file"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+// Mengecek apakah file adalah gambar atau bukan
+$check = getimagesize($_FILES["file"]["tmp_name"]);
+if($check !== false) {
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+} else {
+    echo "File is not an image.";
+    $uploadOk = 0;
+}
+
+// Mengecek apakah file sudah ada
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+
+// Mengecek ukuran file
+if ($_FILES["file"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+
+// Hanya mengijinkan beberapa tipe file
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+
 if (isset($_POST['simpan'])) {
     //Get Date and Time
     date_default_timezone_set('Asia/Jakarta');
     $tgl = date('Y-m-d');
-
-
-    // check if the image has been uploaded
-    if (isset($_FILES['pp']['nama']) && !empty($_FILES['pp']['nama'])) {
-
-        $img_name = $_FILES['pp']['nama'];
-        $tmp_name = $_FILES['pp']['tmp_name'];
-        $error = $_FILES['pp']['error'];
-
-        // check if there is no error while uploading
-        if ($error === 0) {
-            $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
-            $img_ex_to_lc = strtolower($img_ex);
-
-            $allowed_exs = array('jpg', 'jpeg', 'png');
-            if (in_array($img_ex_to_lc, $allowed_exs)) {
-                $new_img_name = uniqid() . '.' . $img_ex_to_lc;
-                $img_upload_path = '..upload/' . $new_img_name;
-                move_uploaded_file($tmp_name, $img_upload_path);
-            } else {
-                echo "<script>alert('File type not allowed.');document.location='?';</script>";
-                exit();
-            }
-        } else {
-            echo "<script>alert('An error occurred while uploading the image.');document.location='?';</script>";
-            exit();
-        }
-    }
 
     // include the connection file and create a new connection
     require_once '../database/koneksi.php';
@@ -41,7 +60,7 @@ if (isset($_POST['simpan'])) {
 
     try {
         // prepare the SQL statement
-        $stmt = $koneksi->prepare("INSERT INTO ttamu (tanggal, nama, email, alamat, nope, pengguna, password, pp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $koneksi->prepare("INSERT INTO ttamu (tanggal, nama, email, alamat, nope, pengguna, password, pp) VALUES (?, ?, ?, ?, ?, ?, ?, $target_file)");
         // bind the parameters
         $stmt->bind_param("ssssssss", $tgl, $_POST['nama'], $_POST['email'], $_POST['alamat'], $_POST['nope'], $_POST['pengguna'], $_POST['passwd'], $_POST['pp']);
         // execute the SQL statement

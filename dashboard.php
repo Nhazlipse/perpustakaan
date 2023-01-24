@@ -28,11 +28,16 @@ if (!isset($_SESSION['pengguna'])) {
     <h2>Selamat Datang <?php echo $_SESSION['nama']; ?></h2>
 
     <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="shadow w-350 p-3 text-center">
-            <img src="<?= $_SESSION['pp'] ?>" class="img-fluid rounded-circle">
-            <h3 class="display-4 "><?= $_SESSION['pengguna'] ?></h3>
-        </div>
+
+    <form action="operasi-upload.php" method="post" enctype="multipart/form-data">
+    <label for="file">Choose a file to upload:</label>
+    <input type="file" name="file" id="file">
+    <br>
+    <input type="submit" value="Upload">
+    </form>
+
     </div>
+    
     <a href="user/logout-user.php">Logout</a>
 </body>
 
