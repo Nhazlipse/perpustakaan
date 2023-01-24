@@ -17,7 +17,7 @@ include 'header.php';
                     </div>
 
                     <!-- Form Daftar Pengunjung -->
-                    <form class="user" method="POST" action="user\operasi-index2.php" enctype="multipart/form-data">
+                    <form class="user" method="POST" action="user\operasi-index2.php" enctype="multipart/form-data" accept="image/*">
                         <div class="form-group">
                             <input type="text" class="form-control form-control-user" name="nama" placeholder="Nama Pengunjung" required>
                         </div>
