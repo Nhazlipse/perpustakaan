@@ -12,6 +12,7 @@ if (isset($_POST['submit'])) {
     // Check if the entered login information is correct
     $query = "SELECT * FROM ttamu WHERE pengguna = '$pengguna' AND password = '$password'";
     $result = $koneksi->query($query);
+    
     if ($result->num_rows > 0) {
         // Login successful, redirect to protected page
         session_start();

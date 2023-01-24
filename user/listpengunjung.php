@@ -1,10 +1,7 @@
-<?php include "../header.php"; ?>
-<?php 
-require_once '../database/koneksi.php';
+<?php
+include "../header.php"; ?>
+<?php
 
-use database\koneksi;
-
-$koneksi = new koneksi
 ?>
 
 <!-- Data Pengunjung -->
@@ -29,7 +26,6 @@ $koneksi = new koneksi
                             <th>Email</th>
                             <th>Alamat</th>
                             <th>No Hp.</th>
-                            <th>Komentar</th>
                         </tr>
                     </thead>
 
@@ -37,9 +33,9 @@ $koneksi = new koneksi
                     <tbody>
                         <?php
                         $tgl = date('Y-m-d');
-                        $tampil = mysqli_query($koneksi, "SELECT * FROM ttamu where tanggal like '%$tgl%' order by id desc");
+                        $query = "SELECT * FROM ttamu where tanggal like '%$tgl%' order by id desc";
+                        $tampil = $koneksi->query($query);
                         $no = 1;
-
                         while ($data = mysqli_fetch_array($tampil)) {
                         ?>
                             <tr>
@@ -49,7 +45,6 @@ $koneksi = new koneksi
                                 <td><?= $data['email'] ?></td>
                                 <td><?= $data['alamat'] ?></td>
                                 <td><?= $data['nope'] ?></td>
-                                <td><?= $data['komentar'] ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>

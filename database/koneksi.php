@@ -32,4 +32,9 @@ class koneksi
     {
         return $this->koneksi->prepare($sql);
     }
+
+    public function query($sql)
+    {
+        return $this->koneksi->query($sql);
+    }
 }
