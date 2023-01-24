@@ -50,7 +50,7 @@ include 'header.php';
                     </form>
 
                     <!-- Form Login ke Admin -->
-                    <form class="user" action="adminitrasi\admin-login.php">
+                    <form class="user" action="..\perpustakaan\administrasi\admin-login.php">
                         <br>
                         <button type="submit" name="logon" class="btn btn-success btn-user btn-block">Login sebagai Admin</button>
                     </form>

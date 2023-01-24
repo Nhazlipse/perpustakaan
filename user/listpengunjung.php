@@ -13,7 +13,7 @@ include_once "layout/header.php"; ?>
 
         <!-- card body -->
         <div class="card-body">
-            <a href="index.php" class="btn btn-danger mb-3"><i class="fa fa-backward"></i> Back</a>
+            <a href="../index.php" class="btn btn-danger mb-3"><i class="fa fa-backward"></i> Back</a>
 
             <!-- buat kolom -->
             <div class="table-responsive">

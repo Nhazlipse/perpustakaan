@@ -26,5 +26,5 @@ if ($data) {
     $_SESSION['nama_pengguna'] = $data['nama_pengguna'];
     header("location: rekaptamu.php");
 } else {
-    echo "<script>alert('Login Gagal, Akun tidak ditemukan..!');document.location='login.php';</script>";
+    echo "<script>alert('Login Gagal, Akun tidak ditemukan..!');document.location='admin-login.php';</script>";
 }

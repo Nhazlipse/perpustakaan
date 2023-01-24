@@ -51,7 +51,7 @@
 
                                     <br>
                                     <!-- form tombol masuk jika bukan admin -->
-                                    <form class="user" action="index.php">
+                                    <form class="user" action="../index.php">
                                         <button class="btn btn-info btn-user btn-block">Masuk sebagai Pengunjung</button>
                                     </form>
 
