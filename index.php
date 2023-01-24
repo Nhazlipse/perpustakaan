@@ -44,13 +44,13 @@ include 'header.php';
                     </form>
 
                     <!-- Form Lihat List Pengunjung (bukan admin) -->
-                    <form class="user" action="user/listpengunjung.php">
+                    <form class="user" action="user\listpengunjung.php">
                         <br>
                         <button type="submit" name="lihat" class="btn btn-danger btn-user btn-block">Histori Pengunjung</button>
                     </form>
 
                     <!-- Form Login ke Admin -->
-                    <form class="user" action="admin-login.php">
+                    <form class="user" action="adminitrasi\admin-login.php">
                         <br>
                         <button type="submit" name="logon" class="btn btn-success btn-user btn-block">Login sebagai Admin</button>
                     </form>

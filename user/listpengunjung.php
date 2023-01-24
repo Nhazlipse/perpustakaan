@@ -1,4 +1,11 @@
 <?php include "../header.php"; ?>
+<?php 
+require_once '../database/koneksi.php';
+
+use database\koneksi;
+
+$koneksi = new koneksi
+?>
 
 <!-- Data Pengunjung -->
 <div class="container">
