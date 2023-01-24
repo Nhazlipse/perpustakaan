@@ -1,5 +1,11 @@
 <?php
 include "layout\header.php";
+
+// session agar (bukan admin) tidak dapat mengakses file admin
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("location:admin-login.php");
+}
 ?>
 
 <!-- row awal -->
