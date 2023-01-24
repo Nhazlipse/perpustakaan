@@ -2,6 +2,10 @@
 //panggil koneksi
 require_once '../database/koneksi.php';
 
+use database\koneksi;
+
+$koneksi = new koneksi();
+
 
 //deklarasikan user dan pass
 $password = md5($_POST['password']);

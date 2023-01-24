@@ -1,18 +1,23 @@
 <!-- operasi untuk edit data form -->
 <?php
-include 'koneksi.php';
+
+require_once '../database/koneksi.php';
+
+use database\koneksi;
+
 $id = $_POST['id'];
 $nama = $_POST['nama'];
 $alamat = $_POST['alamat'];
 $email = $_POST['email'];
 $nohp = $_POST['nope'];
 $tanggal = $_POST['tanggal'];
-$komentar = $_POST['komentar'];
-$query = "UPDATE ttamu SET nama='$nama', alamat='$alamat', email='$email', nope='$nohp', tanggal='$tanggal', komentar='$komentar' WHERE id='$id'";
-$result = mysqli_query($koneksi, $query);
-if ($result) {
+$query = "UPDATE ttamu SET nama='$nama', alamat='$alamat', email='$email', nope='$nohp', tanggal='$tanggal' WHERE id='$id'";
+$koneksi = new koneksi();
+$koneksi->query($query);
+
+if ($koneksi) {
     header("location:rekaptamu.php");
 } else {
-    echo "Gagal " . $query . "<br>" . mysqli_error($koneksi);
+    // Notification Using Script
+    echo "<script>alert('Data Gagal Diupdate');window.location='rekaptamu.php';</script>";
 }
-mysqli_close($koneksi);
