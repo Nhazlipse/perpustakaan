@@ -22,10 +22,14 @@
     }
 
     // deklasikan dan panggil koneksi
-    include 'koneksi.php';
+    require_once '../database/koneksi.php';
+
+    use database\koneksi;
+
+    $koneksi = new koneksi();
     $id = $_GET['id'];
     $query = "SELECT * FROM ttamu WHERE id = '$id'";
-    $result = mysqli_query($koneksi, $query);
+    $result = $koneksi->query($query);
     $row = mysqli_fetch_assoc($result);
     ?>
 
@@ -58,10 +62,6 @@
                     <div class="form-group">
                         <label for="tanggal">Tanggal</label>
                         <input type="date" class="form-control" name="tanggal" id="tanggal" value="<?php echo $row['tanggal']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="komentar">Komentar</label>
-                        <input type="text" class="form-control" name="komentar" id="komentar" value="<?php echo $row['komentar']; ?>">
                     </div>
                     <button type="submit" class="btn btn-primary" name="Update" value="Update Data">
                         Submit

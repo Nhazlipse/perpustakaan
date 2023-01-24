@@ -1,5 +1,8 @@
 <!-- tampilkan data yang di minta -->
 <?php
+
+use database\koneksi;
+
 if (isset($_POST['tampilkan'])) :
 ?>
 
@@ -14,7 +17,6 @@ if (isset($_POST['tampilkan'])) :
                     <th>Email</th>
                     <th>Alamat</th>
                     <th>No Hp.</th>
-                    <th>Komentar</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -25,7 +27,9 @@ if (isset($_POST['tampilkan'])) :
                 <?php
                 $tgl1 = $_POST['tanggal1'];
                 $tgl2 = $_POST['tanggal2'];
-                $tampil = mysqli_query($koneksi, "SELECT * FROM ttamu where tanggal between '$tgl1' and '$tgl2' order by id desc");
+                $query = "SELECT * FROM ttamu where tanggal between '$tgl1' and '$tgl2' order by id desc";
+                $koneksi = new koneksi();
+                $tampil = $koneksi->query($query);
                 $no = 1;
                 if (mysqli_num_rows($tampil) == 0) {
                     echo "<tr><td colspan=7>Data tidak ditemukan</td></tr>";
@@ -39,7 +43,6 @@ if (isset($_POST['tampilkan'])) :
                         <td><?= $data['email'] ?></td>
                         <td><?= $data['alamat'] ?></td>
                         <td><?= $data['nope'] ?></td>
-                        <td><?= $data['komentar'] ?></td>
                         <td>
 
                             <!-- buat tombol edit hapus -->

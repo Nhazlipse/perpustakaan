@@ -1,17 +1,24 @@
 <!-- session agar (bukan admin) tidak dapat mengakses file admin -->
 <?php
+
+require_once '../database/koneksi.php';
+
+use database\koneksi;
+
 session_start();
 if (!isset($_SESSION['username'])) {
     header("location:login.php");
 }
 
 // hapus data pengungjung
-include 'koneksi.php';
 $id = $_GET['id'];
 $sql = "DELETE FROM ttamu WHERE id = $id";
-if (mysqli_query($koneksi, $sql)) {
-    header("location: rekaptamu.php");
+$koneksi = new koneksi();
+$koneksi->query($sql);
+
+if ($koneksi) {
+    header("location:rekaptamu.php");
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($koneksi);
+    // Notification Using Script
+    echo "<script>alert('Data Gagal Diupdate');window.location='rekaptamu.php';</script>";
 }
-mysqli_close($koneksi);
