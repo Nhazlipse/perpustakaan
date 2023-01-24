@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+
 ?>
 
 
@@ -16,7 +17,7 @@ include 'header.php';
                     </div>
 
                     <!-- Form Daftar Pengunjung -->
-                    <form class="user" method="POST" action="user\operasi-index2.php">
+                    <form class="user" method="POST" action="user\operasi-index2.php" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="text" class="form-control form-control-user" name="nama" placeholder="Nama Pengunjung" required>
                         </div>
@@ -36,7 +37,8 @@ include 'header.php';
                             <input type="password" class="form-control form-control-user" name="passwd" placeholder="Password" required>
                         </div>
 
-                        <div class="mb-3"><label class="form-label">Profile Picture</label>
+                        <div class="mb-3">
+                            <label class="form-label">Profile Picture</label>
                             <input type="file" class="form-control" name="file" id="file">
                         </div>
 
