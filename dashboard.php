@@ -29,12 +29,10 @@ if (!isset($_SESSION['pengguna'])) {
 
     <div class="d-flex justify-content-center align-items-center vh-100">
 
-    <form action="operasi-upload.php" method="post" enctype="multipart/form-data">
-    <label for="file">Choose a file to upload:</label>
-    <input type="file" name="file" id="file">
-    <br>
-    <input type="submit" value="Upload">
-    </form>
+    <div class="shadow w-350 p-3 text-center">
+    		<img src="upload/img<?=$_FILES["file"]["name"]?>"
+    		     class="img-fluid rounded-circle">
+            <h3 class="display-4 "><?=$_SESSION['nama']?></h3>
 
     </div>
     
