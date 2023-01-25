@@ -65,7 +65,10 @@ if (isset($_POST['simpan'])) {
         session_start();
         $_SESSION['pengguna'] = $_POST['pengguna'];
         $_SESSION['nama'] = $_POST['nama'];
-        $_SESSION['pp'] = $_FILES["file"]["name"];
+        //Query Untuk Mengambil pp dari database
+        $sql = "SELECT pp FROM ttamu WHERE pengguna = '" . $_POST['pengguna'] . "'";
+        $result = $koneksi->query($sql);
+        $_SESSION['pp'] = $result->fetch_assoc()['pp'];
 
         // return a success message
         echo "<script>alert('Data berhasil disimpan.');document.location='?';</script>";
