@@ -60,7 +60,7 @@ if (isset($_POST['simpan'])) {
     $tgl = date('Y-m-d');
 
     try {
-        $sql = "INSERT INTO ttamu (tanggal, nama, email, alamat, nope, pengguna, password, pp) VALUES ('$tgl', '" . $_POST['nama'] . "', '" . $_POST['email'] . "', '" . $_POST['alamat'] . "', '" . $_POST['nope'] . "', '" . $_POST['pengguna'] . "', '" . $_POST['password'] . "', '" . $_FILES["file"]["name"] . "')";
+        $sql = "INSERT INTO ttamu (tanggal, nama, email, alamat, nope, pengguna, password, pp) VALUES ('$tgl', '" . $_POST['nama'] . "', '" . $_POST['email'] . "', '" . $_POST['alamat'] . "', '" . $_POST['nope'] . "', '" . $_POST['pengguna'] . "', '" . $_POST['passwd'] . "', '" . $_FILES["file"]["name"] . "')";
         $koneksi->query($sql);
         session_start();
         $_SESSION['pengguna'] = $_POST['pengguna'];
