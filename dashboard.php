@@ -11,6 +11,8 @@ if (!isset($_SESSION['pengguna'])) {
     header('location:user/login-user.php');
     exit;
 }
+
+$pp = $_SESSION['pp'];
 ?>
 
 <!DOCTYPE html>
@@ -29,14 +31,19 @@ if (!isset($_SESSION['pengguna'])) {
 
     <div class="d-flex justify-content-center align-items-center vh-100">
 
-    <div class="shadow w-350 p-3 text-center">
-    		<img src="upload/img<?=$_FILES["file"]["name"]?>"
-    		     class="img-fluid rounded-circle">
-            <h3 class="display-4 "><?=$_SESSION['nama']?></h3>
+        <div class="shadow w-350 p-3 text-center">
+            <?php
+            if ($pp == null) {
+                echo "<img src='upload/img/user.png' class='img-fluid' alt='Responsive image'>";
+            } else {
+                echo "<img src='upload/img/$pp' class='img-fluid' alt='Responsive image'>";
+            }
+            ?>
+            <h3 class="display-4 "><?= $_SESSION['nama'] ?></h3>
 
-    </div>
-    
-    <a href="user/logout-user.php">Logout</a>
+        </div>
+
+        <a href="user/logout-user.php">Logout</a>
 </body>
 
 </html>
