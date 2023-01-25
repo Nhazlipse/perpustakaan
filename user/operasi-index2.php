@@ -65,7 +65,8 @@ if (isset($_POST['simpan'])) {
         session_start();
         $_SESSION['pengguna'] = $_POST['pengguna'];
         $_SESSION['nama'] = $_POST['nama'];
-        
+        $_SESSION['pp'] = $_FILES["file"]["name"];
+
         // return a success message
         echo "<script>alert('Data berhasil disimpan.');document.location='?';</script>";
         header("location: ../dashboard.php");
