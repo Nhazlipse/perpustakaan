@@ -43,8 +43,15 @@ $pp = $_SESSION['pp'];
             }
             ?>
             <br>
+
+            <!-- menampilkan Nama -->
             <font size="5" color="black" face="sans-sherif"><?= $_SESSION['nama'] ?></font><br>
-            <font size="4" color="grey" face="sans-sherif"><?php echo $_SESSION['komentar'] ?></font><br>
+            <!-- menampilkan komentar -->
+            <?php 
+            if(isset($_SESSION['komentar'])){
+                echo '<font size="4" color="grey" face="sans-serif">'.$_SESSION['komentar'].'</font><br>';
+            }
+            ?>
             <br>
             <a href="user/logout-user.php" class="btn btn-danger">Logout</a>
         </div>

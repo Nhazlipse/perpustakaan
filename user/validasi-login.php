@@ -31,3 +31,4 @@ if (mysqli_num_rows($login) == 1) {
 } else {
     echo "<script>alert('Username atau Password salah.');document.location='login-user.php';</script>";
 }
+
