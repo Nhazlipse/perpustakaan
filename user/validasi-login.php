@@ -23,6 +23,7 @@ if (mysqli_num_rows($login) == 1) {
         session_start();
         $_SESSION['pengguna'] = $row['pengguna'];
         $_SESSION['nama'] = $row['nama'];
+        $_SESSION['komentar'] = $row['komentar'];
         $_SESSION['pp'] = $row['pp'];
         header("location: ../dashboard.php");
     } else {
