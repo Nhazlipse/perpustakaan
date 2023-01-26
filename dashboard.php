@@ -22,16 +22,19 @@ $pp = $_SESSION['pp'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Dashboard</title>
 </head>
 
 <body>
-    <h1>Dashboard</h1>
-    <h2>Selamat Datang <?php echo $_SESSION['nama']; ?></h2>
+    <div align="center">
+        <div class="kontainer">
+        <font size="10" color="white" face="sans-sherif" box shadow="p-4">Dashboard</font><br>
+    <font size="6" color="white" face="sans-sherif">Selamat Datang <?php echo $_SESSION['nama']; ?></font>
 
     <div class="d-flex justify-content-center align-items-center vh-100">
 
-        <div class="shadow w-350 p-3 text-center">
+        <div class="shadow w-350 p-4 text-center bg-white">
             <?php
             if ($pp == null) {
                 echo "<img src='upload/img/user.png' class='img-fluid' alt='Responsive image'>";
@@ -39,11 +42,12 @@ $pp = $_SESSION['pp'];
                 echo "<img src='upload/img/$pp' class='img-fluid' alt='Responsive image'>";
             }
             ?>
-            <h3 class="display-4 "><?= $_SESSION['nama'] ?></h3>
-
+            <br>
+            <font size="5" color="black" face="sans-sherif"><?= $_SESSION['nama'] ?></font>
+            <br>
+            <a href="user/logout-user.php" class="btn btn-danger">Logout</a>
         </div>
-
-        <a href="user/logout-user.php">Logout</a>
+        </div>
 </body>
 
 </html>

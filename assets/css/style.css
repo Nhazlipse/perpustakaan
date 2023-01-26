@@ -1,3 +1,7 @@
+body{
+    font-family: sans-serif;
+    font-size: 15px;
+}
 .container1 {
     margin: 0 auto;
     margin-left: 320px;
@@ -17,3 +21,16 @@
 .w-350 {
 	width: 350px;
 }
+.login {
+        width: 400px;
+        margin: 100px auto;
+        padding: 10px 30px 35px 30px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 56px 10px #253659;
+}
+.h1{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #A63B32;
+  }

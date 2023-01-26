@@ -13,7 +13,7 @@ include 'header.php';
             <div class="card shadow bg-gradient-light">
                 <div class="card-body">
                     <div class="text-center">
-                        <h1 class="h4 text-gray-900 mb-4">Daftar Pengunjung</h1>
+                        <h1 class="h4 text-gray-900 mb-4">Register Pengunjung</h1>
                     </div>
 
                     <!-- Form Daftar Pengunjung -->
@@ -42,7 +42,13 @@ include 'header.php';
                             <input type="file" class="form-control" name="file" id="file" accept="image/*">
                         </div>
 
-                        <button type="submit" name="simpan" value="Upload" class="btn btn-primary btn-user btn-block">Simpan Data</button>
+                        <button type="submit" name="simpan" value="Upload" class="btn btn-primary btn-user btn-block">Register User</button>
+                    </form>
+
+                    <!-- Form Login User (bukan admin) -->
+                    <form class="user" action="user\login-user.php">
+                        <br>
+                        <button type="submit" name="lihat" class="btn btn-info btn-user btn-block">Login sebagai User</button>
                     </form>
 
                     <!-- Form Lihat List Pengunjung (bukan admin) -->
