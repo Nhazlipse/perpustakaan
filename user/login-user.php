@@ -18,29 +18,29 @@ include_once "layout/header.php";
 	<div class="d-flex justify-content-center align-items-center vh-100">
 
 		<form class="shadow w-450 p-5 bg-white" action="validasi-login.php" method="post">
-		<table border="0" cellspacing="0" cellpadding="3">
-			<h4 class="display-4  fs-1">LOGIN</h4><br>
-			<?php if (isset($_GET['error'])) { ?>
-				<div class="alert alert-danger" role="alert">
-					<?php echo $_GET['error']; ?>
+			<table border="0" cellspacing="0" cellpadding="3">
+				<h4 class="display-4  fs-1">LOGIN</h4><br>
+				<?php if (isset($_GET['error'])) { ?>
+					<div class="alert alert-danger" role="alert">
+						<?php echo $_GET['error']; ?>
+					</div>
+				<?php } ?>
+
+				<div class="mb-3">
+					<label class="form-label">User name</label>
+					<input type="text" class="form-control" name="pengguna" required>
 				</div>
-			<?php } ?>
 
-			<div class="mb-3">
-				<label class="form-label">User name</label>
-				<input type="text" class="form-control" name="pengguna" value="<?php echo (isset($_GET['pengguna'])) ? $_GET['pengguna'] : "" ?>" required>
-			</div>
+				<div class="mb-3">
+					<label class="form-label">Password</label>
+					<input type="password" class="form-control" name="password" required>
+				</div>
 
-			<div class="mb-3">
-				<label class="form-label">Password</label>
-				<input type="password" class="form-control" name="password" required>
-			</div>
-
-			<button type="submit" class="btn btn-primary">Login</button>
-			<a href="dashboard.php"></a>
-			<a href="../index.php" class="btn btn-info">Sign Up</a>
+				<button type="submit" class="btn btn-primary me-3">Login</button>
+				<a href="dashboard.php"></a>
+				<a href="../index.php" class="btn btn-info">Sign Up</a>
 			</table>
-			</form>
+		</form>
 	</div>
 </body>
 
