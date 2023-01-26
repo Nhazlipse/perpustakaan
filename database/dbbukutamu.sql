@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2023 at 09:51 AM
+-- Generation Time: Jan 26, 2023 at 03:54 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,18 +34,21 @@ CREATE TABLE `ttamu` (
   `email` varchar(100) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `nope` varchar(20) NOT NULL,
+  `komentar` varchar(285) NOT NULL,
   `pengguna` varchar(10) NOT NULL,
-  `password` varchar(10) NOT NULL
+  `password` varchar(10) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `pp` varchar(285) NOT NULL DEFAULT 'default-img.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ttamu`
 --
 
-INSERT INTO `ttamu` (`id`, `tanggal`, `nama`, `email`, `alamat`, `nope`, `pengguna`, `password`) VALUES
-(18, '2023-01-12', 'Khabib', 'nhazlipse@gmail.com', 'Nhaz', '0000223', '', ''),
-(22, '2023-01-13', 'Yang Mulia Khabeb ', 'sandidiego@gmail.com', 'Mojo', '213123', '', ''),
-(23, '2023-01-20', 'Nhazlipse', 'nhazlipse@gmail.com', 'Jl Dr Cipto Mangunkusumo 4 B RT 003/013, Dki', '222222222222', 'nhazlipse', 'nhazlipse');
+INSERT INTO `ttamu` (`id`, `tanggal`, `nama`, `email`, `alamat`, `nope`, `komentar`, `pengguna`, `password`, `status`, `pp`) VALUES
+(67, '2023-01-26', 'M Anas Baihaqi Yuliadi', 'nhazytb1@gmail.com', 'Jl Dr Cipto Mangunkusumo 4 B RT 003/013, Dki', '085233749280', 'Mantap', 'nhazlipse', 'nhazlipse', 'non-aktif', 'logo-nas.png'),
+(70, '2023-01-26', 'Fara Carmila', 'Faracarmila@gmail.com', 'Jl Dr Cipto Mangunkusumo 4 B RT 003/013, Dki', '213123231', '“Tindakan menyalahkan hanya akan membuang waktu. Sebesar apapun kesalahan yang kamu timpakan ke orang lain, dan sebesar apapun kamu menyalahkannya, hal tersebut tidak akan mengubahmu” - Wayne Dyer', 'Fara', 'Fara', 'aktif', '20335be5-a8d0-4ab7-9264-93bebfe9f09d__store_cover__2022__12__15__04__32__48 copy.png'),
+(71, '2023-01-26', 'Rodeo Danu A', 'Rodeodanu@gmail.com', 'Jl Dr Cipto Mangunkusumo 4 B RT 003/013, Dki', '0822354125123', '“Ambillah risiko yang lebih besar dari apa yang dipikirkan orang lain aman. Berilah perhatian lebih dari apa yang orang lain pikir bijak. Bermimpilah lebih dari apa yang orang lain pikir masuk akal” - Claude T. Bissell', 'Rodeo', 'Rodeo', 'non-aktif', 'download (1).jfif');
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,7 @@ ALTER TABLE `tuser`
 -- AUTO_INCREMENT for table `ttamu`
 --
 ALTER TABLE `ttamu`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `tuser`
