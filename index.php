@@ -31,6 +31,9 @@ include 'header.php';
                             <input type="text" class="form-control form-control-user" name="nope" placeholder="No Hp." required>
                         </div>
                         <div class="form-group">
+                            <input type="text" class="form-control form-control-user" name="komentar" placeholder="Komentar" required>
+                        </div>
+                        <div class="form-group">
                             <input type="text" class="form-control form-control-user" name="pengguna" placeholder="Username" required>
                         </div>
                         <div class="form-group">

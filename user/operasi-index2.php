@@ -60,11 +60,12 @@ if (isset($_POST['simpan'])) {
     $tgl = date('Y-m-d');
 
     try {
-        $sql = "INSERT INTO ttamu (tanggal, nama, email, alamat, nope, pengguna, password, pp, status) VALUES ('$tgl', '" . $_POST['nama'] . "', '" . $_POST['email'] . "', '" . $_POST['alamat'] . "', '" . $_POST['nope'] . "', '" . $_POST['pengguna'] . "', '" . $_POST['passwd'] . "', '" . $_FILES["file"]["name"] . "','aktif')";
+        $sql = "INSERT INTO ttamu (tanggal, nama, email, alamat, nope, komentar, pengguna, password, pp, status) VALUES ('$tgl', '" . $_POST['nama'] . "', '" . $_POST['email'] . "', '" . $_POST['alamat'] . "', '" . $_POST['nope'] . "', '" . $_POST['komentar'] . "', '" . $_POST['pengguna'] . "', '" . $_POST['passwd'] . "', '" . $_FILES["file"]["name"] . "','aktif')";
         $koneksi->query($sql);
         session_start();
         $_SESSION['pengguna'] = $_POST['pengguna'];
         $_SESSION['nama'] = $_POST['nama'];
+        $_SESSION['komentar'] = $_POST['komentar'];
         //Query Untuk Mengambil pp dari database dan disimpan ke session serta status harus aktif
         $sql = "SELECT pp FROM ttamu WHERE pengguna = '" . $_POST['pengguna'] . "' AND status = 'aktif'";
         $result = $koneksi->query($sql);
